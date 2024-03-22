@@ -1,0 +1,90 @@
+body{
+	font-family: Arial, Arial, Helvetica, sans-serif ;
+	text-align: center;
+	background-color: rgb(40, 2, 76);
+	color: white;
+}
+
+.winner-body {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: White;
+	animation: backgroundColorPalette 200ms ease-in forwards;
+	animation-name: backgroundColorPalette;
+ 	animation-duration: 5s;
+  	animation-iteration-count: infinite;
+  	animation-direction: alternate;
+}
+@keyframes backgroundColorPalette{
+	0%{
+		background: #29BF12;
+	}
+	25%{
+		
+		background: #ABFF4F;
+	}
+	50%{
+
+		background: #08BDBD;
+	}
+	75%{
+
+		background: #F21B3F;
+	}
+	100%{
+
+		background: #FF9914;
+	}
+}
+
+#board{
+	height: 540px;
+	width: 630px;
+	background-color: blueviolet;
+	border: 10px solid rgb(90, 89, 89);
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+#Refresh{
+	height: 30px;
+	width: 75px;
+	background-color: rgb(0, 0, 0);
+	color: white;
+	font-size: 10px;
+	text-align: center;
+}
+
+#Undo {
+	height: 30px;
+	width: 75px;
+	background-color: rgb(0, 0, 0);
+	color: white;
+	font-size: 10px;
+	text-align: center;
+}
+
+
+.tile{
+	height: 70px;
+	width: 70px;
+	margin: 5px; 
+
+	background-color: white;
+	border: 5px solid rgb(63, 62, 62);
+	border-radius: 50%;
+}
+
+.red-piece{
+	background-color: rgb(229, 57, 57);
+}
+
+.yellow-piece{
+	background-color: rgb(247, 247, 44);
+}
+
+.undo-piece{
+	background-color: white;
+}
