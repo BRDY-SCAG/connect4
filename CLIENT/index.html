@@ -6,12 +6,8 @@
     <title>Connect Four Game</title>
 
 	<link rel="stylesheet" href="connect4style.css">
-	<script src="connect4.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script> 
-    var socket = io(); 
-    
-    </script>
+	<script src="connect4.js"></script>
 </head>
 
 <body>
@@ -20,6 +16,11 @@
 	<button id="Refresh" type="button">
 		New Game
 	</button>
+    <div id="gameIdDisplay">Game ID: <span id="currentGameId">None</span></div>
+    <div id="joinGame">
+        <input type="text" id="gameIdInput" placeholder="Enter Game ID"/>
+        <button id="joinGameButton">Join Game</button>
+    </div>
     <div id="board">
         
     </div>

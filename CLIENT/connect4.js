@@ -10,11 +10,38 @@ var board;
 var currentColumns;
 var rows = 6;
 var columns = 7;
+var socket = io();
+let games = {};
 
+const initialState = {
+	currentPlayer: 'R',
+	gameOver: false
+}
 
 window.onload = function() {
 	createGame();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+	const joinGameButton  = document.getElementById('joinGameButton');
+	const gameIdInput = document.getElementById('gameIdInput');
+	const currentGameIdDisplay = document.getElementById('currentGameId');
+
+	joinGameButton.addEventListener('click', () =>{
+		const gameId = gameIdInput.value.trim();
+		if(gameId) {
+			socket.emit('joinGame, gameId');
+			currentGameIdDisplay.textContent = gameId;
+			gameIdInput.value = '';
+		}
+	});
+
+	socket.emit('createGame');
+
+	socket.on('gameCreated', (gameId) => {
+		currentGameIdDisplay.textContent = gameId;
+		});
+});
 
 function createGame(){
 	board = [];
